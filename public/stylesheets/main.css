@@ -1,0 +1,279 @@
+@font-face {
+    font-family: 'Monsterrat';
+    src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Monsterrat-Bold';
+    src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Monsterrat-Black';
+    src: url('../fonts/Montserrat-Black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Monsterrat-ExtraBold';
+    src: url('../fonts/Montserrat-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Monsterrat-Thin';
+    src: url('../fonts/Montserrat-Thin.ttf') format('truetype');
+}
+
+:root {
+    font-size: 24px;
+    font-family: 'Monsterrat', sans-serif;
+    --title-font: 'Monsterrat-Black', sans-serif;
+
+    --textRegSub: 'Monsterrat', sans-serif;
+    --textRegSubLine: 1.5;
+    --textRegSubSize: 1rem;
+    color: white
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+#main {
+    width: 100dvw;
+    height: 100dvh;
+    overflow-x: hidden;
+}
+
+body,
+#main {
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* lowwer Content */
+
+#main>section:not(:first-of-type) {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    #start {
+        flex-direction: column;
+    }
+}
+
+h2.title {
+    font-size: 3rem;
+    font-family: var(--title-font);
+    text-align: center;
+    letter-spacing: 0.75rem;
+}
+
+p.subtitle {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    font-family: 'Monsterrat-Reg', sans-serif;
+    text-align: justify;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.slider-transition {
+    display: flex;
+    align-items: center;
+}
+
+.slider-transition>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#waacking_slider_contain img {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover !important;
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 2rem;
+    align-items: center;
+    align-content: center;
+}
+
+.grid2Re {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 2rem;
+    align-items: center;
+    align-content: center;
+}
+
+.itemIframeLand {
+    width: 100%;
+    height: 100%;
+    border: none;
+    aspect-ratio: 16/9;
+    border-radius: 1rem;
+}
+
+.itemIframePort {
+    height: 30rem;
+    max-height: 70dvh;
+    border: none;
+    aspect-ratio: 9/16;
+    border-radius: 1rem;
+}
+
+.section_item h2 {
+    font-size: 3rem;
+    font-family: 'Monsterrat-ExtraBold', sans-serif;
+    text-align: center;
+    letter-spacing: 0.15rem;
+    padding: 1rem 0;
+}
+
+.section_item p,
+.section_subItem p {
+    line-height: var(--textRegSubLine);
+    font-family: var(--textRegSub);
+    font-size: var(--textRegSubSize);
+    font-weight: bold;
+    text-align: justify;
+}
+
+.video-title {
+    font-size: 0.75rem;
+    font-family: 'Monsterrat-Thin', sans-serif;
+    text-align: center;
+    font-style: italic;
+    padding: 0.5rem 0;
+}
+
+#battle_itemIframeLand iframe {
+    height: 100%;
+    border: none;
+    aspect-ratio: 9/16;
+    border-radius: 1rem;
+}
+
+#battle_itemIframeLand {
+    width: 100%;
+    height: 100%;
+    max-height: 70dvh;
+}
+
+.section_item h3 {
+    font-size: 2rem;
+    font-family: 'Monsterrat-ExtraBold', sans-serif;
+    text-align: center;
+    letter-spacing: 0.15rem;
+    padding: 1rem 0;
+}
+
+#choreography_subItem>div {
+    width: 50%;
+    height: 80%;
+    max-height: 70dvh;
+    border-radius: 1rem;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#choreography_subItem iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0.4) 100%);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    font-family: 'Monsterrat-Thin', sans-serif;
+    color: white;
+}
+
+
+@media screen and (max-aspect-ratio:1/1) {
+
+    .grid2,
+    .grid2Re {
+        grid-template-columns: 100%;
+        row-gap: 2rem;
+        justify-items: center;
+    }
+
+    #choreography_subItem {
+        height: auto !important;
+        min-height: 0;
+    }
+
+    #choreography_item {
+        height: auto !important;
+        min-height: 0;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        font-size: 16px;
+
+    }
+
+    #onboard {
+        display: flex!important;
+        flex-direction: column-reverse;
+    }
+
+    #onboard h1 {
+        padding: 3rem 0.5rem;
+    }
+
+    .grid2,
+    .grid2Re {
+        grid-template-columns: 100%;
+        row-gap: 2rem;
+        justify-items: center;
+    }
+
+    .itemIframePort {
+        height: 60rem;
+    }
+
+    .itemIframeLand {
+        width: 80vw !important;
+    }
+
+    #choreography_subItem {
+        height: auto !important;
+        min-height: 0;
+    }
+
+    #choreography_item {
+        height: auto !important;
+        min-height: 0;
+    }
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waacking</title>
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="stylesheets/table.css">
+</head>
+
+<body>
+    <div id="main" style="height: 100dvh;">
+        <section id="onboard" class="smoothScrollTo"
+            style="height: 100dvh; display: grid; grid-template-columns: 40% 60%; justify-content: center; align-items: center; justify-items: center;">
+            <h1 style="font-family: var(--title-font); font-size: 3rem">I am Anh Thu<br>and I Waack!</h1>
+            <img src="images/_MG_8244.jpeg" style="height: 100dvh; width: 100%;" alt="">
+            <div style="position: absolute; bottom: 1rem; left: 1rem; width: 2rem; height: 2rem;">
+                <img id="onboard_play" src="images/svg/play.svg" style="width: 100%; height: 100%; cursor: pointer;"
+                    alt="">
+                <img id="onboard_pause" src="images/svg/pause.svg" style="width: 100%; height: 100%; cursor: pointer;"
+                    alt="">
+            </div>
+            <audio id="myAudio" controls autoplay preload="auto" style="display: none;">
+                <source
+                    src="https://rr3---sn-i3b7knsl.googlevideo.com/videoplayback?expire=1730311055&amp;ei=Lx8iZ6SiLsiT1d8P5evp0QI&amp;ip=42.118.185.189&amp;id=o-AKKnW6U6qQiQIaKFpYMcT6JBzTIygMvWR9ZH1fiZhIOQ&amp;itag=140&amp;source=youtube&amp;requiressl=yes&amp;xpc=EgVo2aDSNQ%3D%3D&amp;gcr=vn&amp;bui=AQn3pFTXHG36by2PhhHybDSuV2Wt233ufxtfreAmN_kCQeQ6_XKTTkWpFSppMV7q1YvFB79MECXMlqB3&amp;spc=qtApAeL9M-hE-3N6fgBeAoRpj3FSh-tnYymLvkzQEAbY6rOpW7tJy7QtPA8g&amp;vprv=1&amp;svpuc=1&amp;mime=audio%2Fmp4&amp;ns=AkyXcy7SzyNK0Z3a7Z3gEDkQ&amp;rqh=1&amp;gir=yes&amp;clen=3715808&amp;dur=229.384&amp;lmt=1594623969343350&amp;keepalive=yes&amp;fexp=24350590,24350655,24350675,24350705,24350737,51312688,51326932,51331020&amp;c=MWEB&amp;sefc=1&amp;txp=2311222&amp;n=-vHSbZf4069fMA&amp;sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cgcr%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&amp;sig=AJfQdSswRgIhAJ7hH4BRs_5VlX8XpP-wLDLPsfw_qEpWwEvfUo9x6S4kAiEAmHUN8arjgPcXMxOJ98HQ_NXVbXQyoK_lfMa143WKG8Y%3D&amp;title=Perhaps+Swayhaps&amp;rm=sn-42u-nbozz7l,sn-i3bd67e&amp;rrc=79,104&amp;req_id=fc53090b9a50a3ee&amp;rms=nxu,au&amp;redirect_counter=2&amp;cms_redirect=yes&amp;cmsv=e&amp;ipbypass=yes&amp;met=1730289484,&amp;mh=U8&amp;mip=27.72.88.46&amp;mm=30&amp;mn=sn-i3b7knsl&amp;ms=nxu&amp;mt=1730289155&amp;mv=m&amp;mvi=3&amp;pl=20&amp;lsparams=ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&amp;lsig=ACJ0pHgwRQIgX8rObSMKLq1B59Qo4NgiGNbpNcXTkWhSrQNLRWF2JtgCIQD6m_r7O6k0AnKPdOTjPTsVfNJkKaWW8ZXJ0Oji-fmqJQ%3D%3D"
+                    type="audio/mp4">
+            </audio>
+        </section>
+
+        <!-- >>> -->
+
+        <section id="waacking_thumb" class="minh-100dvh display-flex-column-center padding-3 smoothScrollTo">
+            <h2 class="title">WAACKING</h2>
+            <p class="subtitle">
+                Waacking is a street dance style distinguished by its rotational arm movements, posing, and emphasis on
+                expressiveness. Typically performed in disco music, the style allows me the freedom to embody drama and
+                character through diverse modes of self-expression. With my favorite crop tops and powder blushes on, I
+                couldn’t care less about the excess fat in my upper arms as music guides my body, embracing the personal
+                story - the drama - each character holds. Be it an undefeated champion, a heartbroken lover, or a
+                passionate admirer, Waacking, to me, feels like an escape from life to take on other personas that are
+                brimming with emotion and creativity.
+            </p>
+        </section>
+
+        <!-- >>> -->
+
+        <!-- <section id="waacking_slider" class="minh-100dvh display-flex-center smoothScrollTo">
+            <img id="waacking_prev" src="./images/svg/left.svg" style="width: 4rem; height: 4rem;" alt="">
+            <div id="waacking_slider_contain" class="">
+             
+                <div class="minh-100dvh" style="width: 100dvw;"></div>
+            </div>
+            <img id="waacking_next" src="./images/svg/right.svg" style="width: 4rem; height: 4rem;" alt="">
+        </section> -->
+        <section id="waacking_slider" class="minh-100dvh display-flex-center smoothScrollTo"
+            style="position: relative; max-width: none;">
+            <img id="waacking_prev" src="./images/svg/left.svg"
+                style="width: 4rem; height: 4rem; left: 1rem; position: absolute;" alt="">
+            <div id="waacking_slider_contain" class="" style="width: 100dvw;">
+                <div class="h-100dvh" style="width: 100dvw; overflow: hidden;">
+                    <img src='images/DSC_5338.jpeg' alt="">
+                    <img src='images/DSCF4207.jpeg' alt="">
+                    <img src='images/DSC_5352.jpeg' alt="">
+                </div>
+            </div>
+            <img id="waacking_next" src="./images/svg/right.svg"
+                style="width: 4rem; height: 4rem; right: 1rem; position: absolute;" alt="">
+        </section>
+
+        <!-- >>> -->
+
+        <section id="battle_thumb" class="minh-100dvh display-flex-column-center padding-3 smoothScrollTo">
+            <h2 class="title">BATTLE</h2>
+            <p class="subtitle">
+                A dance battle is a dynamic showcase where dancers take turns on the dance floor to exhibit their skills
+                within a designated set of rules. Connecting with a passionate network of young individuals—young men
+                confidently wearing dresses, young women fearlessly performing head spins—I, too, am inspired to
+                represent Waacking with confidence and drama. Sad, mad, angsty, and euphoric, every battle that I take
+                on is a chance for me to portray my honest self through multiple layers of emotions. Rolling
+                dramatically in chorus and letting movement flow on beat, I learn more about myself and from others. In
+                the community, there is “No standing, just dancing”.
+            </p>
+            <div class="display-flex-column-center" style="padding-top: 3rem;">
+                <p>Scroll down to see more of Anh Thu - the battler!</p>
+                <img src="images/svg/arrowDown.svg" style="width: 4rem; height: 4rem;" alt="">
+            </div>
+        </section>
+
+        <!-- >>> -->
+
+        <section id="battle_item" class="minh-100dvh grid2 padding-3 smoothScrollTo section_item">
+
+            <h2>HBDC</h2>
+            <h2></h2>
+            <p>
+                High School Best Dance Crew (HBDC) is the largest dance battle competition for high school students
+                in Northern Vietnam. Entering its 6th season with the theme “ACE” (The Trump Card), HBDC aims to
+                promote a deep appreciation for this street art form among future generations, attracting thousands
+                of attendees. Within the competition, I participated as a dancer - member of Nguyen Hue Dance Club
+                (NDC). It was through a range of HBDC events that I have had the opportunity to embrace and showcase
+                my full potential as a Waacker, a partner, and a leader.
+            </p>
+            <div class="iframe_holder">
+                <h4 class="video-title">HBDC ONLINE VOTING. “Please don’t cry”, performed and choreographed by NDC</h4>
+                <iframe class="itemIframeLand"
+                    title="HBDC ONLINE VOTING. “Please don’t cry”, performed and choreographed by NDC"
+                    src="https://drive.google.com/file/d/1oLdyX3Gr-EZZ8FrFK45WGnyPE0qqrdEQ/preview"
+                    allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <section id="battle_subItem">
+            <div class="grid2 padding-3 section_subItem">
+                <iframe src="https://drive.google.com/file/d/1_YCVlFLCRE7Qn5XoGEPZ0NWi3uTSugJP/preview"
+                    class="itemIframePort" allow="autoplay"></iframe>
+                <p>HBDC Community. An HBDC kick-off event that allows every dancer under the age of 21 years old to
+                    participate. As a Waacker, each step I took on the dance floor was a step of authenticity and
+                    liberation. In a simple cargo pant, I could not hear anything else but the driving emotions urging
+                    me to move.</p>
+            </div>
+            <div class="grid2Re padding-3 section_subItem">
+                <h2></h2>
+                <h2>HBDC Konnect</h2>
+
+                <div id="battle_itemIframeLand" class="display-flex-between width-100 flex-1 overflow-hidden"
+                    style="position: relative;">
+                    <img id="battle_prev" src="./images/svg/left.svg" style="width: 2rem; height: 2rem;" alt="">
+                    <img id="battle_next" src="./images/svg/right.svg" style="width: 2rem; height: 2rem;" alt="">
+                    <div></div>
+                </div>
+
+                <p id="konnect_des">
+                    High School Best Dance Crew (HBDC) is the largest dance battle competition for high school students
+                    in Northern Vietnam. Entering its 6th season with the theme “ACE” (The Trump Card), HBDC aims to
+                    promote a deep appreciation for this street art form among future generations, attracting thousands
+                    of attendees. Within the competition, I participated as a dancer - member of Nguyen Hue Dance Club
+                    (NDC). It was through a range of HBDC events that I have had the opportunity to embrace and showcase
+                    my full potential as a Waacker, a partner, and a leader.
+                </p>
+            </div>
+        </section>
+
+        <!--   >>> -->
+
+        <section id="choreography" class="minh-100dvh display-flex-column-center padding-3 smoothScrollTo">
+            <h2 class="title">CHOREOGRAPHY</h2>
+            <p class="subtitle">
+                Choreography is the art of gathering and organizing movements into order and pattern. A dance
+                choreography, specifically, embraces musicality and creativity. To me, the articulation of movements
+                closely incorporated with the flow of music serves as a channel for exploration. Elaborating on
+                different layers of a beat, especially in disco music, I found myself gradually transforming into
+                characters within each song, allowing its meaning to inspire body movement. It is the meaningful
+                connection that awakens emotions deep within, unleashing ideas and self-expression.
+            </p>
+            <div class="display-flex-column-center" style="padding-top: 3rem;">
+                <p>Scroll down to see more of Anh Thu - the choreographer!</p>
+                <img src="images/svg/arrowDown.svg" style="width: 4rem; height: 4rem;" alt="">
+            </div>
+        </section>
+
+        <section id="choreography_item" class="minh-100dvh padding-3 smoothScrollTo section_item">
+            <h3>FPTU HOLA SHOWCASE</h3>
+            <div class="grid2">
+
+                <p>
+                    FPTU Hola Showcase is a choreography competition organized by FPT University for high school
+                    students in
+                    Nothern Vietnam. Performing before nearly 700 people on the final night, NDC was awarded “Style”
+                    prize.
+                </p>
+                <div class="iframe_holder">
+                    <h4 class="video-title">“MVT” (Most Valuable Team) choreographed by NDC</h4>
+                    <iframe class="itemIframeLand" title="“MVT” (Most Valuable Team) choreographed by NDC"
+                        src="https://drive.google.com/file/d/1CCSIJsLC8mXqGjvaKDjUbNA8T8sIJUOO/preview"
+                        allow="autoplay"></iframe>
+                </div>
+            </div>
+        </section>
+
+    <section id="choreography_subItem" class="minh-100dvh padding-3 smoothScrollTo display-flex-center section_subItem"
+        style="gap: 2rem;">
+        <div>
+                <iframe src="https://drive.google.com/file/d/10mB7iv8-3ahVjG0EG0OWnAbVUHmhg481/preview"
+                    style="width: 100%; height: 100%; aspect-ratio: 16/9;" allow="autoplay"></iframe>
+            </div>
+            <div>
+                <iframe src="https://drive.google.com/file/d/1yQYLfsM1Rux2W7lR_W4bEts8YxS53kp6/preview"
+                    style="width: 100%; height: 100%; aspect-ratio: 9/16;" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+
+        <footer>
+            <h2>CONTACT ME</h2>
+            <a href="mailto:huynhanhthu1611207@gmail.com">
+                <p>Email: huynhanhthu1611207@gmail.com</p>
+            </a>
+            <a href="tel:+84968217413">
+                <p>Tel: (+84)968217413</p>
+            </a>
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=1+Nguy+Nhu+Kon+Tum+Street,+Nhan+Chinh+Ward,+Thanh+Xuan+District,+Ha+Noi+City">
+                <p>Address: 1 Nguy Nhu Kon Tum Street, Nhan Chinh Ward, Thanh Xuan District, Ha Noi City</p>
+            </a>
+        </footer>
+    </div>
+
+
+</body>
+<script src="javascripts/main.js"></script>
+
+</html>
