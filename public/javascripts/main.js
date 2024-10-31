@@ -33,6 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const pauseIcon = document.getElementById('onboard_pause');
     const sectionOnboard = document.querySelector('#onboard');
 
+    console.log('autoplay');
+
+
     audio.autoplay = true;
     audio.load();
     pauseIcon.style.display = 'none';
@@ -56,6 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
     pauseIcon.addEventListener('click', pauseAudio);
     const handleOnboardClick = () => {
         playAudio();
+        console.log('click');
+
         sectionOnboard.removeEventListener('click', handleOnboardClick);
     };
 
@@ -70,6 +75,11 @@ function addSliderAndAutoSlide(containerID, imgList, nextID, prevID, autoScroll)
     const nextBtn = document.getElementById(nextID);
     const prevBtn = document.getElementById(prevID);
     let scrollWidth = container.scrollWidth;
+    let textPlaceHolder = document.querySelector(`#${containerID}_imgTitlePlaceHolder`);
+
+    let vidSub0 = `An annual event reserved for competing dance crews to experience and practice tactics on 1vs1, 3vs3, and 5vs5 battles.`
+    let vidSub1 = `During the 1-on-1 battles, I took on the role of a leader, organizing the order of battle based on the types of music being played, ensuring a dynamic and engaging experience for both the dancers and the audience.`
+    let vidSub2 = `In the 3-on-3 and 5-on-5 battles, I collaborated closely with other members to perform both choreographed routines and solo freestyle segments, highlighting our versatility and originality as a collective.`
 
     container.parentElement.style.position = 'relative';
     nextBtn.style.position = 'absolute';
@@ -93,6 +103,15 @@ function addSliderAndAutoSlide(containerID, imgList, nextID, prevID, autoScroll)
         imgContainer.style.transition = 'transform 1s ease-in-out';
         imgContainer.style.transform = `translateX(-${currentIndex * scrollWidth}px)`;
         imgContainer.classList.add('slider-transition');
+        if (textPlaceHolder) {
+            if (currentIndex === imgList.length - 2) {
+                textPlaceHolder.innerHTML = vidSub1;
+            } else if (currentIndex === imgList.length - 1) {
+                textPlaceHolder.innerHTML = vidSub2;
+            } else {
+                textPlaceHolder.innerHTML = vidSub0;
+            }
+        }
     };
 
     nextBtn.addEventListener('click', () => updateCurrentImage(1));
@@ -219,6 +238,7 @@ function battle_itemIframeLand_Iframe_sizeChange() {
     let containner = document.querySelector('#battle_itemIframeLand');
     let containnerWidth = containner.getBoundingClientRect().width;
     let containnerHeight = containner.getBoundingClientRect().height;
+    let offsetWidthContainer = containner.offsetWidth;
     console.log(containnerWidth, containnerHeight);
     imgs.forEach(item => {
         item.style.width = `${containnerWidth}px`;
@@ -227,14 +247,21 @@ function battle_itemIframeLand_Iframe_sizeChange() {
     iframe.forEach(item => {
         // item.style.width = ${containnerWidth}px;
         item.style.height = `${containnerHeight}px`;
-        item.style.margin = ` 0 ${containnerWidth / 2 - item.getBoundingClientRect().width / 2} px`;
+        item.style.margin = `0 ${offsetWidthContainer / 2 - item.getBoundingClientRect().width / 2}px`;
     })
+
 }
 battle_itemIframeLand_Iframe_sizeChange();
-function waackingSlider() {
-    let imgs = document.querySelectorAll('#waacking_slider_contain img');
-    let prevBtn = document.querySelector('#waacking_prev');
-    let nextBtn = document.querySelector('#waacking_next');
+
+
+function createImageSlider(containerID, prevID, nextID, autoScroll = true, interval = 8000) {
+    const container = document.querySelector(`#${containerID}`);
+    const imgs = container.querySelectorAll('img');
+    const prevBtn = document.querySelector(`#${prevID}`);
+    const nextBtn = document.querySelector(`#${nextID}`);
+    let imgTitlePlaceHolder = document.querySelector(`#${containerID}_imgTitlePlaceHolder`);
+    let titleList = [];
+
     nextBtn.style.cursor = 'pointer';
     prevBtn.style.cursor = 'pointer';
     nextBtn.style.zIndex = '100';
@@ -243,15 +270,20 @@ function waackingSlider() {
     prevBtn.style.borderRadius = '50%';
     nextBtn.style.backgroundColor = 'rgba(255,255,255, 0.5)';
     prevBtn.style.backgroundColor = 'rgba(255,255,255, 0.5)';
+
     let currentIndex = 0;
 
     imgs.forEach((img, index) => {
         img.style.transition = 'all 0.5s ease-in-out';
         img.style.opacity = 0;
         img.style.display = 'none';
-    })
+        if (img.getAttribute('title')) {
+            titleList.push(img.getAttribute('title'));
+        }
+    });
     imgs[currentIndex].style.display = 'block';
     imgs[currentIndex].style.opacity = 1;
+
     const updateCurrentImage = (increment) => {
         imgs[currentIndex].style.transition = 'all 0.5s ease-in-out';
         imgs[currentIndex].style.opacity = 0;
@@ -260,6 +292,9 @@ function waackingSlider() {
             currentIndex = (currentIndex + increment + imgs.length) % imgs.length;
             imgs[currentIndex].style.display = 'block';
             imgs[currentIndex].style.opacity = 0;
+            if (imgTitlePlaceHolder) {
+                imgTitlePlaceHolder.innerHTML = titleList[currentIndex];
+            }
             setTimeout(() => {
                 imgs[currentIndex].style.opacity = 1;
             }, 100);
@@ -269,8 +304,10 @@ function waackingSlider() {
     nextBtn.addEventListener('click', () => updateCurrentImage(1));
     prevBtn.addEventListener('click', () => updateCurrentImage(-1));
 
-    updateCurrentImage(0);
-
-    setInterval(() => updateCurrentImage(1), 8000);
+    if (autoScroll) {
+        setInterval(() => updateCurrentImage(1), interval);
+    }
 }
-waackingSlider();
+
+createImageSlider('waacking_slider_contain', 'waacking_prev', 'waacking_next');
+createImageSlider('hola_slider_contain', 'hola_prev', 'hola_next');
