@@ -74,7 +74,8 @@ function addSliderAndAutoSlide(containerID, imgList, nextID, prevID, autoScroll)
     const imgContainer = container.querySelector('div');
     const nextBtn = document.getElementById(nextID);
     const prevBtn = document.getElementById(prevID);
-    let scrollWidth = container.scrollWidth;
+    // let scrollWidth = container.scrollWidth;
+    // let scrollWidth = container.documentQuerySelector('img').getBoundingClientRect().width;
     let textPlaceHolder = document.querySelector(`#${containerID}_imgTitlePlaceHolder`);
 
     let vidSub0 = `An annual event reserved for competing dance crews to experience and practice tactics on 1vs1, 3vs3, and 5vs5 battles.`
@@ -101,7 +102,9 @@ function addSliderAndAutoSlide(containerID, imgList, nextID, prevID, autoScroll)
     const updateCurrentImage = (increment) => {
         currentIndex = (currentIndex + increment + imgList.length) % imgList.length;
         imgContainer.style.transition = 'transform 1s ease-in-out';
+        let scrollWidth = imgContainer.querySelector('img').getBoundingClientRect().width;
         imgContainer.style.transform = `translateX(-${currentIndex * scrollWidth}px)`;
+
         imgContainer.classList.add('slider-transition');
         if (textPlaceHolder) {
             if (currentIndex === imgList.length - 2) {

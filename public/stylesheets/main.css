@@ -183,9 +183,9 @@ p.subtitle {
     aspect-ratio: 3/2;
 }
 
-#battle_itemIframeLand > div {
-    width: 100%;
+#battle_itemIframeLand>div {
     height: 100%;
+    aspect-ratio: 3/2;
 }
 
 
